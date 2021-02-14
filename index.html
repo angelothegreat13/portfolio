@@ -1,0 +1,757 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Michael Angelo Manaog Portfolio</title>
+    <link href="./public/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@3.0.6/css/line.css">
+</head>
+<body class="antialiased bg-gray-100">
+    <noscript>
+        <strong>We're sorry but Suysing doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+
+    <!-- Navbar -->
+    <div 
+        x-data="{ atTop: true }"
+        x-on:scroll.window="atTop =( window.pageYOffset > 10) ? false : true"
+        class="mb-10"
+    >
+        <header class="bg-white w-full fixed top-0 animated z-40" :class='{ "shadow-lg": !atTop }'>
+            <nav class="max-w-screen-xl mx-auto w-full px-4 py-4">
+                <div x-data="{ open: false }" class="flex flex-col md:items-center md:justify-between md:flex-row">
+                    <div class="flex flex-row items-center justify-between text-md">
+                        <a href="#" class="focus:outline-none focus:shadow-outline flex items-center tracking-wide">
+                            <img src="./public/img/logo.svg" class="w-6 h-6 mr-1">
+                            <span class="text-my-green font-semibold mr-1">Angelo</span>
+                            <span class="text-my-blue font-bold">Dev</span>
+                        </a>
+                        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 white">
+                                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"></path>
+                                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div 
+                        :class="{'flex': open, 'hidden': !open}"
+                        class="main-nav flex flex-col flex-grow md:pb-0 md:pt-0 md:flex md:justify-end md:flex-row pt-2 capitalize tracking-wide font-medium text-gray-900"
+                    >
+                        <a 
+                            class="px-3 py-2 mt-2 rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-my-blue focus:bg-my-blue focus:outline-none focus:shadow-outline"
+                            href="#skills">Skills</a>
+                        <a 
+                            class="px-3 py-2 mt-2 rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-my-blue focus:bg-my-blue focus:outline-none focus:shadow-outline"
+                            href="#services">Services</a>
+                        <a 
+                            class="px-3 py-2 mt-2 rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-my-blue focus:bg-my-blue focus:outline-none focus:shadow-outline"
+                            href="#portfolio">Portfolio</a>
+                        <a 
+                            class="px-3 py-2 mt-2 rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-my-blue focus:bg-my-blue focus:outline-none focus:shadow-outline"
+                            href="#experience">Experience</a>
+                        <a 
+                            class="px-3 py-2 mt-2 rounded-lg md:mt-0 md:ml-4 hover:text-white focus:text-white hover:bg-my-blue focus:bg-my-blue focus:outline-none focus:shadow-outline"
+                            href="#contact">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <!-- End of Navbar -->
+    <main class="max-w-screen-xl mx-auto">
+        <!-- Banner -->
+        <section class="flex flex-col lg:flex-row js-show-on-scroll">
+            <div class="w-full lg:w-1/2">
+                <div class="mt-10 mx-auto px-5 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <p class="text-my-blue font-semibold text-lg tracking-wide italic">Hi👋, my name is</p>
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block xl:inline">Michael Angelo</span>
+                            <span class="block text-my-green">Manaog</span>
+                        </h1>
+                        <p class="text-justify mt-2 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            A passionate and hard working full stack web developer. I have been working in IT industry for almost 3 years with great
+                            efficiency. I love new challenges, trending technologies and new projects that help me invest all my skills and experience into
+                            succeeding them. 
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md">
+                                <a href="#"
+                                    class="shadow-md w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-my-blue hover:bg-indigo-600 md:py-4 md:text-lg md:px-10">
+                                    Resume
+                                </a>
+                            </div>
+                            <div class="rounded-md mt-3 sm:mt-0 sm:ml-3">
+                                <a href="#contact"
+                                    class="shadow-md w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-my-green hover:bg-green-100 hover:border-1 hover:border-green-100 hover:text-my-green md:py-4 md:text-lg md:px-10">
+                                    Get In Touch
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-1/2 hidden lg:items-end lg:justify-center lg:flex">
+                <img src="./public/img/undraw_laravel_and_vue_59tp.svg" class="w-4/5 h-4/5">
+            </div>
+        </section>
+        <!-- End of Banner -->
+
+        <!-- Skills -->
+        <section id="skills" class="js-show-on-scroll">
+            <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl text-center mt-20">
+                <span class="text-gray-900">Technical</span>
+                <span class="underlined text-my-blue">Skills</span>
+            </h1>
+            <div class="text-gray-600 mt-10">
+                <div class="px-5 mx-auto">
+                    <div class="flex flex-wrap -m-4 border border-gray-100 rounded-lg">
+                        <div class="w-full xl:w-1/3 md:w-1/2 p-4">
+                            <div class="p-6 rounded-lg">
+                                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-my-blue mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                    </svg>
+                                </div>
+                                <h2 class="text-lg text-gray-900 font-medium mb-2">Programming Languages</h2>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> PHP
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> JavaScript
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> HTML
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Css
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> C++
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Java
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Visual Basic
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Python
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-full xl:w-1/3 md:w-1/2 p-4">
+                            <div class="p-6 rounded-lg">
+                                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-my-blue mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                    </svg>
+                                </div>
+                                <h2 class="text-lg text-gray-900 font-medium mb-2">Frameworks and Libraries</h2>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Laravel
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Vue Js
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Alphine Js
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> jQuery
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Tailwind Css
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Bootstrap
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Codeigniter
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> WordPress
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-full xl:w-1/3 md:w-1/2 p-4">
+                            <div class="p-6 rounded-lg">
+                                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-my-blue mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <h2 class="text-lg text-gray-900 font-medium mb-2">Others</h2>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Git and Github
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> SVN
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Postman
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> SEO
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Linux Server Configuration
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> Putty
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> MySQL
+                                </p>
+                                <p class="flex text-gray-700 text-sm tracking-wide font-medium">
+                                    <svg class="w-2 text-my-blue mx-2" viewBox="0 0 8 8" fill="currentColor">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg> PostgreSQL
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of Skills -->
+
+        <!-- Services -->
+        <section id="services" class="js-show-on-scroll">
+            <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl text-center mt-20">
+                <span class="text-gray-900">My</span>
+                <span class="underlined text-my-blue">Services</span>
+            </h1>
+            <div class="text-gray-600 mt-10">
+                <div class="px-5 mx-auto">
+                    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+                        <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                            <div
+                                class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-my-green mb-5 flex-shrink-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-10 h-10">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Responsive Web Design</h2>
+                                <p class="leading-relaxed text-base">I build responsive and beautiful landing page website using new technologies like Tailwind Css and Bootstrap.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                            <div
+                                class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-my-green mb-5 flex-shrink-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-10 h-10">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Content Managed Websites</h2>
+                                <p class="leading-relaxed text-base">I build website using popular CMS(Content Management System) like WordPress.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                            <div
+                                class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-green-100 text-my-green mb-5 flex-shrink-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-10 h-10">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Web Development</h2>
+                                <p class="leading-relaxed text-base">I build modern web applications for different purposes using technologies such as Laravel and Vue Js.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of Services -->
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="js-show-on-scroll">
+            <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl text-center mt-20">
+                <span class="text-gray-900">What I’ve</span>
+                <span class="underlined text-my-blue">Built</span>
+            </h1>
+
+            <!-- SpeedRegalo -->
+            <div class="flex flex-col-reverse mt-10 px-5 mx-auto lg:flex-row">
+                <div class="w-full lg:w-2/5 lg:z-20">
+                    <div class="h-full flex items-center">
+                        <div class="px-6 py-6 shadow-md rounded-none bg-white border-b-4 border-my-blue w-full lg:w-auto lg:border-b-0 lg:border-r-4 lg:-mr-12">
+                            <h2 class="text-lg text-gray-900 font-medium mb-2 tracking-wide">SpeedRegalo E-commerce</h2>
+                            <p class="text-justify text-sm text-gray-600">
+                                An e-commerce website that allows you to buy beautiful gifts online for your loved ones in the Philippines.
+                            </p>
+                            <p class="flex text-gray-700 text-sm tracking-wide font-medium mt-3">
+                                <svg class="w-2 text-my-blue mr-1" viewBox="0 0 8 8" fill="currentColor">
+                                    <circle cx="4" cy="4" r="3" />
+                                </svg> Php, JavaScript, Html, Css, Laravel, Bootstrap, jQuery
+                            </p>    
+                            <div class="flex mt-4">
+                                <a href="https://www.speedregalo.com.ph/" target="_blank"
+                                    class="shadow-sm flex items-center justify-center px-3 py-2 border border-transparent text-sm tracking-wide rounded-md text-white bg-my-blue hover:bg-indigo-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg> Visit Site
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full shadow-md rounded-md mb-5 lg:w-3/5 lg:mb-0">
+                    <a href="https://www.speedregalo.com.ph/" target="_blank">
+                        <img src="./public/img/speedregalo.png" alt="speedregalo" class="w-full object-cover">
+                    </a>    
+                </div>
+            </div>
+
+            <!-- Acsan -->
+            <div class="flex flex-col mt-10 px-5 mx-auto lg:flex-row">
+                <div class="w-full shadow-md rounded-md mb-5 lg:w-3/5 lg:mb-0">
+                    <a href="https://acsanenterprise.com/" target="_blank">
+                        <img src="./public/img/acsan.png" alt="acsan" class="w-full object-cover">
+                    </a>
+                </div>
+                <div class="w-full lg:w-2/5 lg:z-20">
+                    <div class="h-full flex items-center">
+                        <div class="px-6 py-6 shadow-md rounded-none bg-white border-b-4 border-my-green w-full lg:w-auto lg:border-b-0 lg:border-l-4 lg:-ml-12">
+                            <h2 class="text-lg text-gray-900 font-medium mb-2 tracking-wide">Acsan Enterprise</h2>
+                            <p class="text-justify text-sm text-gray-600">
+                                An e-commerce website that allows you to customized your items such as changing the color, size and adding a custom logo of your own.
+                            </p>
+                            <p class="flex text-gray-700 text-sm tracking-wide font-medium mt-3">
+                                <svg class="w-2 text-my-green mr-1" viewBox="0 0 8 8" fill="currentColor">
+                                    <circle cx="4" cy="4" r="3" />
+                                </svg> Php, JavaScript, Html, Css, Laravel, Bootstrap, jQuery
+                            </p>
+                            <div class="flex mt-4">
+                                <a href="https://acsanenterprise.com/" target="_blank"
+                                    class="shadow-sm flex items-center justify-center px-3 py-2 border border-transparent text-sm tracking-wide rounded-md text-white bg-my-green hover:bg-green-100 hover:border-1 hover:border-green-100 hover:text-my-green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        class="w-4 h-4 mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg> Visit Site
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suysing -->
+            <div class="flex flex-col-reverse mt-10 px-5 mx-auto lg:flex-row">
+                <div class="w-full lg:w-2/5 lg:z-20">
+                    <div class="h-full flex items-center">
+                        <div
+                            class="px-6 py-6 shadow-md rounded-none bg-white border-b-4 border-my-blue w-full lg:w-auto lg:border-b-0 lg:border-r-4 lg:-mr-12">
+                            <h2 class="text-lg text-gray-900 font-medium mb-2 tracking-wide">Suysing Grocery Express</h2>
+                            <p class="text-justify text-sm text-gray-600">
+                                An e-commerce website that specially created for franchise owner of Suysing Commercial Corporation.
+                            </p>
+                            <p class="flex text-gray-700 text-sm tracking-wide font-medium mt-3">
+                                <svg class="w-2 text-my-blue mr-1" viewBox="0 0 8 8" fill="currentColor">
+                                    <circle cx="4" cy="4" r="3" />
+                                </svg> Php, JavaScript, Html, Css, Laravel, Laravel Livewire, Tailwind Css, Alphine Js, Rest Api
+                            </p>
+                            <div class="flex mt-4">
+                                <a href="http://groceryexpress.ph/" target="_blank"
+                                    class="shadow-sm flex items-center justify-center px-3 py-2 border border-transparent text-sm tracking-wide rounded-md text-white bg-my-blue hover:bg-indigo-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        class="w-4 h-4 mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg> Visit Site
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full shadow-md rounded-md mb-5 lg:w-3/5 lg:mb-0">
+                    <a href="http://groceryexpress.ph/" target="_blank">
+                        <img src="./public/img/suysing.png" alt="speedregalo" class="w-full object-cover">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dutyfree -->
+            <div class="flex flex-col mt-10 px-5 mx-auto lg:flex-row">
+                <div class="w-full shadow-md rounded-md mb-5 lg:w-3/5 lg:mb-0">
+                    <a href="http://dutyfreephilippines.com.ph/" target="_blank">
+                        <img src="./public/img/dfp.png" alt="acsan" class="w-full object-cover">
+                    </a>
+                </div>
+                <div class="w-full lg:w-2/5 lg:z-20">
+                    <div class="h-full flex items-center">
+                        <div
+                            class="px-6 py-6 shadow-md rounded-none bg-white border-b-4 border-my-green w-full lg:w-auto lg:border-b-0 lg:border-l-4 lg:-ml-12">
+                            <h2 class="text-lg text-gray-900 font-medium mb-2 tracking-wide">Duty Free Philippines</h2>
+                            <p class="text-justify text-sm text-gray-600">
+                                An e-commerce website that sells local and imported products in the Philippines.
+                            </p>
+                            <p class="flex text-gray-700 text-sm tracking-wide font-medium mt-3">
+                                <svg class="w-2 text-my-green mr-1" viewBox="0 0 8 8" fill="currentColor">
+                                    <circle cx="4" cy="4" r="3" />
+                                </svg> Php, JavaScript, Html, Css, Laravel, Bootstrap, jQuery
+                            </p>
+                            <div class="flex mt-4">
+                                <a href="http://dutyfreephilippines.com.ph/" target="_blank"
+                                    class="shadow-sm flex items-center justify-center px-3 py-2 border border-transparent text-sm tracking-wide rounded-md text-white bg-my-green hover:bg-green-100 hover:border-1 hover:border-green-100 hover:text-my-green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        class="w-4 h-4 mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg> Visit Site
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gender Sensitivity System -->
+            <div class="flex flex-col-reverse mt-10 px-5 mx-auto lg:flex-row">
+                <div class="w-full lg:w-2/5 lg:z-20">
+                    <div class="h-full flex items-center">
+                        <div
+                            class="px-6 py-6 shadow-md rounded-none bg-white border-b-4 border-my-blue w-full lg:w-auto lg:border-b-0 lg:border-r-4 lg:-mr-12">
+                            <h2 class="text-lg text-gray-900 font-medium mb-2 tracking-wide">Gender Sensitivity System</h2>
+                            <p class="text-justify text-sm text-gray-600">
+                                A survey sytem that the main purpose is to identify gender preference of survey participant.
+                            </p>
+                            <p class="flex text-gray-700 text-sm tracking-wide font-medium mt-3">
+                                <svg class="w-2 text-my-blue mr-1" viewBox="0 0 8 8" fill="currentColor">
+                                    <circle cx="4" cy="4" r="3" />
+                                </svg> Php, JavaScript, Html, Css, Bootstrap, jQuery
+                            </p>
+                            <div class="flex mt-4">
+                                <a href="#"
+                                    class="shadow-sm flex items-center justify-center px-3 py-2 border border-transparent text-sm tracking-wide rounded-md text-white bg-my-blue hover:bg-indigo-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        class="w-4 h-4 mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg> Get Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full shadow-md rounded-md mb-5 lg:w-3/5 lg:mb-0">
+                    <img src="./public/img/gender.png" alt="speedregalo" class="w-full object-cover">
+                </div>
+            </div>
+        </section>
+        <!-- End of Portfolio -->
+
+        <!-- Experience -->
+        <section id="experience" class="js-show-on-scroll">
+            <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl text-center mt-28">
+                <span class="text-gray-900">Work</span>
+                <span class="underlined text-my-blue">Experience</span>
+            </h1>
+            <div class="px-5 mt-10">
+                <div class="relative">
+                    <div class="border-r-2 border-my-blue absolute h-full top-0" style="left: 15px"></div>
+                    <ul class="list-none m-0 p-0">
+                        <li class="mb-5">
+                            <div class="flex items-center mb-1">
+                                <div class="bg-my-blue rounded-full h-8 w-8"></div>
+                                <div class="flex-1 ml-4 font-medium text-lg">Digits (April 2018 - November 2019)</div>
+                            </div>
+                            <div class="ml-12">
+                                <ul class="p-0 m-0 text-gray-600 text-sm tracking-wide bullet">
+                                    <li class="relative pl-4 mb-2">Responsible in web design using HTML5, CSS3 and Bootstrap Framework.</li>
+                                    <li class="relative pl-4 mb-2">Creating website using HTML, CSS3, JS,jQuery,PHP,Bootstrap and Laravel Framework for MIAA (Manila International AirportAuthority).</li>
+                                    <li class="relative pl-4 mb-2">Researching different software programs, maintaining software documentation.</li>
+                                    <li class="relative pl-4 mb-2">Maintaining and adding new feature of website once build.</li>
+                                    <li class="relative pl-4 mb-2">Installation of website in Linux server.</li>
+                                    <li class="relative pl-4 mb-2">Linux Server configuration and maintenance.</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-5">
+                            <div class="flex items-center mb-1">
+                                <div class="bg-my-blue rounded-full h-8 w-8"></div>
+                                <div class="flex-1 ml-4 font-medium text-lg">SpeedRegalo Inc. (November 2019 - Present)</div>
+                            </div>
+                            <div class="ml-12">
+                                <ul class="p-0 m-0 text-gray-600 text-sm tracking-wide bullet">
+                                    <li class="relative pl-4 mb-2">Created website using HTML5, CSS3, Bootstrap,jQuery,Vue Js and Laravel Framework in DutyFree Philippines and SpeedRegalo Website.</li>
+                                    <li class="relative pl-4 mb-2">Maintaining and adding new features in Dutyfree Philippines,SpeedRegalo and Suysing.</li>
+                                    <li class="relative pl-4 mb-2">Created rest api for Dutyfree and Speedregalo website using Laravel Passport.</li>
+                                    <li class="relative pl-4 mb-2">Created a responsive website of Suysing using Tailwind Css.</li>
+                                    <li class="relative pl-4 mb-2">Implement Laravel Livewire and Alpine js in Suysing Website for better user interaction.</li>
+                                    <li class="relative pl-4 mb-2">Linux Server configuration and maintenance in AWS.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- End of Experience -->
+
+        <!-- Contact -->
+        <section id="contact" class="flex px-5 mt-20 mb-20 js-show-on-scroll">
+            <div class="w-1/2 hidden lg:items-end lg:justify-center lg:flex">
+                <img src="./public/img/undraw_online_chat_d7ek.svg" alt="contact me" class="w-4/5 h-4/5">
+            </div>
+            <div class="text-gray-600 relative w-full lg:w-1/2">
+                <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl text-center">
+                    <span class="text-gray-900">Get In</span>
+                    <span class="underlined text-my-blue">Touch</span>
+                </h1>
+                <p class="text-center text-base mt-5 text-gray-700">Have a nice project in mind? </p>
+                <p class="text-center text-base text-gray-700 ">Feel free to send me a message so we can discuss it!</p>
+                <form id="contact-form" action="https://formspree.io/f/xpzoeqqv" method="POST" class="mx-auto mt-10" autocomplete="off">
+                    <div class="lg:w-full md:w-4/5 mx-auto">
+                        <div class="flex flex-wrap">
+                            <div id="contact-form-status" class="w-full relative hidden items-center bg-white shadow rounded-md px-2 py-3">
+                                <div class="text-my-green">
+                                    <svg class="w-6 sm:w-5 h-6 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div class="text-sm tracking-wide text-gray-500 ml-2 msg">Thanks!</div>
+                            </div>
+
+                            <div class="p-2 w-full md:w-1/2">
+                                <div class="relative">
+                                    <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                                    <input type="text" id="name" name="name" required 
+                                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                </div>
+                            </div>
+                            <div class="p-2 w-full md:w-1/2">
+                                <div class="relative">
+                                    <label for="email" class="leading-7 text-sm text-gray-600">Email Address</label>
+                                    <input type="email" id="email" name="_replyto" required 
+                                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                </div>
+                            </div>
+                            <div class="p-2 w-full">
+                                <div class="relative">
+                                    <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                                    <textarea id="message" name="message" required 
+                                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                                </div>
+                            </div>
+                            <div class="p-2 w-full">
+                                <button id="contact-form-button" type="submit" class="flex mx-auto text-white bg-my-blue border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- End of Contact -->
+    </main>
+
+    <!-- Footer  420h-->
+    <footer class="bg-gray-800 flex items-center justify-center" style="height: 420px;">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="flex justify-center mb-5">
+                <a href="#" class="focus:outline-none focus:shadow-outline flex items-center tracking-wide">
+                    <img src="./public/img/logo.svg" class="w-7 h-7 mr-1">
+                    <span class="text-my-green text-xl font-semibold mr-1">Angelo</span>
+                    <span class="text-my-blue text-xl font-bold">Dev</span>
+                </a>
+            </div>
+            <div class="mb-5 flex flex-col justify-center items-center">
+                <a class="text-gray-100 text-base font-semibold tracking-wider px-3 py-2 rounded-lg focus:outline-none focus:shadow-outline"
+                    href="#skills">Technical Skills</a>
+                <a class="text-gray-100 text-base font-semibold tracking-wider px-3 py-2 rounded-lg focus:outline-none focus:shadow-outline"
+                    href="#services">Services</a>
+                <a class="text-gray-100 text-base font-semibold tracking-wider px-3 py-2 rounded-lg focus:outline-none focus:shadow-outline"
+                    href="#portfolio">What I've Built</a>
+                <a class="text-gray-100 text-base font-semibold tracking-wider px-3 py-2 rounded-lg focus:outline-none focus:shadow-outline"
+                    href="#experience">Work Experience</a>
+                <a class="text-gray-100 text-base font-semibold tracking-wider px-3 py-2 rounded-lg focus:outline-none focus:shadow-outline"
+                    href="#contact">Get In Touch</a>
+            </div>
+            <div class="flex justify-center mb-5">
+                <div class="mr-4">
+                    <a href="https://www.facebook.com/angelothegreat13/" target="_blank" class="w-12 h-12 inline-flex items-center justify-center rounded-full text-white bg-my-blue hover:bg-my-green">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="mr-4">
+                    <a href="https://twitter.com/naruhinaisreal" target="_blank" class="w-12 h-12 inline-flex items-center justify-center rounded-full text-white bg-my-blue hover:bg-my-green">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="mr-4">
+                    <a href="https://www.instagram.com/manaog.michael/" target="_blank" class="w-12 h-12 inline-flex items-center justify-center rounded-full text-white bg-my-blue hover:bg-my-green">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"  class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://github.com/angelothegreat13" target="_blank" class="w-12 h-12 inline-flex items-center justify-center rounded-full text-white bg-my-blue hover:bg-my-green">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M13.18 11.309c-.718 0-1.3.807-1.3 1.799 0 .994.582 1.801 1.3 1.801s1.3-.807 1.3-1.801c-.001-.992-.582-1.799-1.3-1.799zm4.526-4.683c.149-.365.155-2.439-.635-4.426 0 0-1.811.199-4.551 2.08-.575-.16-1.548-.238-2.519-.238-.973 0-1.945.078-2.52.238C4.74 2.399 2.929 2.2 2.929 2.2c-.789 1.987-.781 4.061-.634 4.426C1.367 7.634.8 8.845.8 10.497c0 7.186 5.963 7.301 7.467 7.301l1.734.002 1.732-.002c1.506 0 7.467-.115 7.467-7.301 0-1.652-.566-2.863-1.494-3.871zm-7.678 10.289h-.056c-3.771 0-6.709-.449-6.709-4.115 0-.879.31-1.693 1.047-2.369C5.537 9.304 7.615 9.9 9.972 9.9h.056c2.357 0 4.436-.596 5.664.531.735.676 1.045 1.49 1.045 2.369 0 3.666-2.937 4.115-6.709 4.115zm-3.207-5.606c-.718 0-1.3.807-1.3 1.799 0 .994.582 1.801 1.3 1.801.719 0 1.301-.807 1.301-1.801 0-.992-.582-1.799-1.301-1.799z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <p class="text-gray-100 tracking-wide font-light text-sm text-center">© Michael Angelo Manaog 2021</p>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+<script type="text/javascript">
+// animation
+const callback = function (entries) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fadeIn");
+        } else {
+            entry.target.classList.remove("animate-fadeIn");
+        }
+    });
+};
+
+const observer = new IntersectionObserver(callback);
+const targets = document.querySelectorAll(".js-show-on-scroll");
+
+targets.forEach(function (target) {
+    target.classList.add("opacity-0");
+    observer.observe(target);
+});
+
+// set active on page scroll
+let mainNavLinks = document.querySelectorAll(".main-nav a");
+let mainSections = document.querySelectorAll("main section");
+let lastId;
+let cur = [];
+
+window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY; 
+
+    mainNavLinks.forEach(link => {
+        let section = document.querySelector(link.hash);
+
+        if (section.offsetTop <= fromTop &&  section.offsetTop + section.offsetHeight > fromTop) {
+            link.classList.add("bg-my-blue");
+            link.classList.add("text-white");
+        } else {
+            link.classList.remove("bg-my-blue");
+            link.classList.remove("text-white");
+        }
+    });
+});
+
+// contact us function 
+window.addEventListener("DOMContentLoaded", function () 
+{
+    var form = document.getElementById("contact-form");
+    var status = document.querySelector("#contact-form-status");
+    var statusMsg = document.querySelector("#contact-form-status .msg");
+
+    // Success and Error functions for after the form is submitted
+    function success() 
+    {
+        form.reset();
+        status.classList.remove("hidden");
+        status.classList.add("flex");
+        statusMsg.innerHTML = "Your message was successfully sent!";
+        
+        setTimeout(function () { 
+            status.classList.remove("flex");
+            status.classList.add("hidden"); 
+        }, 4000);
+    }
+
+    function error() {
+        statusMsg.innerHTML = "Oops! There was a problem.";
+    }
+
+    // handle the form submission event
+    form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var data = new FormData(form);
+        ajax(form.method, form.action, data, success, error);
+    });
+});
+
+// helper function for sending an AJAX request
+function ajax(method, url, data, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+            success(xhr.response, xhr.responseType);
+        } else {
+            error(xhr.status, xhr.response, xhr.responseType);
+        }
+    };
+    xhr.send(data);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.underlined {
+    position: relative;
+    margin-right: 1rem;
+}
+.underlined:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 13px;
+    width: 110%;
+    border: solid 2px #00BFA6;
+    border-color: #00BFA6 transparent transparent transparent;
+    border-radius: 50%;
+}
+
+.bullet li::before {
+    content: "▹";
+    @apply text-base text-my-green left-0 absolute;
+}
+
+@tailwind utilities;
