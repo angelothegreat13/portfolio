@@ -538,7 +538,7 @@
                         <li class="mb-5">
                             <div class="flex items-center mb-1">
                                 <div class="bg-my-blue rounded-full h-8 w-8"></div>
-                                <div class="flex-1 ml-4 font-medium text-lg">SpeedRegalo Inc. (October 2019 - January 2021)</div>
+                                <div class="flex-1 ml-4 font-medium text-lg">SpeedRegalo Inc. (October 2019 - June 2021)</div>
                             </div>
                             <div class="ml-12">
                                 <ul class="p-0 m-0 text-gray-600 text-sm tracking-wide bullet">
@@ -576,25 +576,7 @@
                         <li class="mb-5">
                             <div class="flex items-center mb-1">
                                 <div class="bg-my-blue rounded-full h-8 w-8"></div>
-                                <div class="flex-1 ml-4 font-medium text-lg">Blue Hive Inc. (March 2021 - June 2021)</div>
-                            </div>
-                            <div class="ml-12">
-                                <ul class="p-0 m-0 text-gray-600 text-sm tracking-wide bullet">
-                                    <li class="relative pl-4 mb-2">Bug fixing and added new features for Peking Order website (a restaurant application).</li>
-                                    <li class="relative pl-4 mb-2">Integrated PayMongo payment on Peking Order website.</li>
-                                    <li class="relative pl-4 mb-2">Worked with our senior developer to add new features on QPAX Traffic System.</li>
-                                </ul>
-                                <p class="flex text-gray-700 text-sm tracking-wide font-medium mt-3">
-                                    <svg class="w-2 text-my-blue mr-1" viewBox="0 0 8 8" fill="currentColor">
-                                        <circle cx="4" cy="4" r="3" />
-                                    </svg> Tech Stacks: Laravel, Bootstrap CSS, Javascript, PHP, jQuery, MySQL, GIT, ClickUp
-                                </p>
-                            </div>
-                        </li>
-                        <li class="mb-5">
-                            <div class="flex items-center mb-1">
-                                <div class="bg-my-blue rounded-full h-8 w-8"></div>
-                                <div class="flex-1 ml-4 font-medium text-lg">Transcosmos Asia Philippines (June 2021 - Present)</div>
+                                <div class="flex-1 ml-4 font-medium text-lg">Transcosmos Asia Philippines (June 2021 - January 2023)</div>
                             </div>
                             <div class="ml-12">
                                 <ul class="p-0 m-0 text-gray-600 text-sm tracking-wide bullet">
@@ -613,7 +595,7 @@
                         <li class="mb-5">
                             <div class="flex items-center mb-1">
                                 <div class="bg-my-blue rounded-full h-8 w-8"></div>
-                                <div class="flex-1 ml-4 font-medium text-lg">Stealth Startup (Part Time) (September 2021 - Present)</div>
+                                <div class="flex-1 ml-4 font-medium text-lg">Stealth Startup (Part Time) (September 2021 - December 2022)</div>
                             </div>
                             <div class="ml-12">
                                 <ul class="p-0 m-0 text-gray-600 text-sm tracking-wide bullet">
@@ -747,30 +729,11 @@
                     </a>
                 </div>
             </div>
-            <p class="text-gray-100 tracking-wide font-light text-sm text-center">© Michael Angelo Manaog 2022</p>
+            <p class="text-gray-100 tracking-wide font-light text-sm text-center">© Michael Angelo Manaog <span id="footer-year"></span></p>
         </div>
     </footer>
     <!-- End of Footer -->
 <script type="text/javascript">
-// animation
-// const callback = function (entries) {
-//     entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add("animate-fadeIn");
-//         } else {
-//             entry.target.classList.remove("animate-fadeIn");
-//         }
-//     });
-// };
-
-// const observer = new IntersectionObserver(callback);
-// const targets = document.querySelectorAll(".js-show-on-scroll");
-
-// targets.forEach(function (target) {
-//     target.classList.add("opacity-0");
-//     observer.observe(target);
-// });
-
 // set active on page scroll
 let mainNavLinks = document.querySelectorAll(".main-nav a");
 let mainSections = document.querySelectorAll("main section");
@@ -799,6 +762,8 @@ window.addEventListener("DOMContentLoaded", function ()
     var form = document.getElementById("contact-form");
     var status = document.querySelector("#contact-form-status");
     var statusMsg = document.querySelector("#contact-form-status .msg");
+
+    document.querySelector("#footer-year").innerText = new Date().getFullYear();
 
     // Success and Error functions for after the form is submitted
     function success() 
